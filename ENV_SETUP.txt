@@ -1,0 +1,28 @@
+Create a .env file in the root directory with the following content:
+
+# Option 1: Backend Server (Direct Email via Gmail SMTP)
+PORT=3001
+GMAIL_USER=shashankgowdashash1317@gmail.com
+GMAIL_APP_PASSWORD=your_16_character_app_password_here
+RECIPIENT_EMAIL=shashankgowdashash1317@gmail.com
+VITE_API_URL=http://localhost:3001
+
+# Option 2: Formspree (Third-Party Service - Alternative)
+# VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/YOUR_FORM_ID
+
+IMPORTANT FOR BACKEND SERVER:
+1. Replace "your_16_character_app_password_here" with your actual Gmail App Password
+2. Get your Gmail App Password from: https://myaccount.google.com/apppasswords
+3. Make sure 2-Step Verification is enabled on your Gmail account first
+4. Remove any spaces from the App Password when pasting it
+
+IMPORTANT FOR FORMSPREE:
+1. Sign up at https://formspree.io/ (free)
+2. Create a form and get your endpoint URL
+3. Uncomment and add the VITE_FORMSPREE_ENDPOINT line above
+
+NOTE: The contact form will try the backend server first, then fallback to Formspree if backend is not available.
+You only need to configure ONE method, but both can be configured for redundancy.
+
+See DIRECT_EMAIL_SETUP.md or FORMSPREE_SETUP.md for detailed instructions.
+

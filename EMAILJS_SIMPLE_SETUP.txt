@@ -1,0 +1,110 @@
+═══════════════════════════════════════════════════════════════
+  EMAILJS SETUP - SUPER SIMPLE GUIDE
+  Get emails sent directly to: shashankgowdashash1317@gmail.com
+═══════════════════════════════════════════════════════════════
+
+STEP 1: CREATE ACCOUNT (2 minutes)
+─────────────────────────────────────
+1. Open: https://www.emailjs.com/
+2. Click "Sign Up" (top right corner)
+3. Sign up with Google (easiest) or Email
+4. Verify your email if asked
+
+STEP 2: CONNECT YOUR GMAIL (1 minute)
+───────────────────────────────────────
+1. In EmailJS dashboard, click "Email Services" (left menu)
+2. Click "Add New Service" button
+3. Select "Gmail" from the list
+4. Click "Connect Account"
+5. Sign in with: shashankgowdashash1317@gmail.com
+6. Allow EmailJS to access your email
+7. COPY THE SERVICE ID (looks like: service_abc123)
+   → Write it down or copy it!
+
+STEP 3: CREATE EMAIL TEMPLATE (1 minute)
+──────────────────────────────────────────
+1. Click "Email Templates" (left menu)
+2. Click "Create New Template" button
+3. Fill in:
+
+   Template Name: Portfolio Contact
+   
+   Subject Line: Portfolio Contact: {{subject}}
+   
+   Content (copy this exactly):
+   ──────────────────────────────────────────────
+   New message from your portfolio contact form:
+   
+   Name: {{from_name}}
+   Email: {{from_email}}
+   Subject: {{subject}}
+   
+   Message:
+   {{message}}
+   
+   ──────────────────────────────────────────────
+   Reply to: {{reply_to}}
+   ──────────────────────────────────────────────
+
+4. Click "Save" button
+5. COPY THE TEMPLATE ID (looks like: template_xyz789)
+   → Write it down or copy it!
+
+STEP 4: GET YOUR PUBLIC KEY (30 seconds)
+─────────────────────────────────────────
+1. Click "Account" (left menu)
+2. Click "General" tab
+3. Find "Public Key" section
+4. COPY THE PUBLIC KEY (looks like: abc123xyz456)
+   → Write it down or copy it!
+
+STEP 5: ADD TO YOUR PROJECT (1 minute)
+────────────────────────────────────────
+1. In your project folder, create a file named: .env
+   (Same folder where package.json is located)
+
+2. Open the .env file and paste this (replace with YOUR values):
+
+VITE_EMAILJS_SERVICE_ID=service_abc123
+VITE_EMAILJS_TEMPLATE_ID=template_xyz789
+VITE_EMAILJS_PUBLIC_KEY=abc123xyz456
+
+3. Replace the example values with YOUR actual IDs from steps 2, 3, and 4
+4. Save the file
+
+STEP 6: RESTART SERVER (30 seconds)
+────────────────────────────────────
+1. Stop your current server (Press Ctrl+C in terminal)
+2. Run: npm run dev
+3. Open your portfolio in browser
+4. Test the contact form!
+
+═══════════════════════════════════════════════════════════════
+  DONE! ✅
+  
+  Now when someone sends a message:
+  → Confirmation dialog appears
+  → After confirming, email goes directly to your inbox
+  → No app picker, no hassle!
+═══════════════════════════════════════════════════════════════
+
+TROUBLESHOOTING:
+────────────────
+❌ Not receiving emails?
+   → Check EmailJS dashboard → "Logs" for errors
+   → Make sure you restarted the server after creating .env
+   → Check spam folder
+   → Verify all IDs are correct (no extra spaces)
+
+❌ Still not working?
+   → Make sure .env file is in the root folder (same as package.json)
+   → Check that all three values start with correct prefixes:
+     - Service ID starts with "service_"
+     - Template ID starts with "template_"
+     - Public Key is just letters/numbers
+
+Need help? Check EMAILJS_SETUP.md for more details.
+
+
+
+
