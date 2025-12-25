@@ -49,13 +49,7 @@ const Contact = ({ setActiveSection }) => {
 
     try {
       // Use Formspree (simple third-party service)
-      const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT
-
-      if (!formspreeEndpoint || formspreeEndpoint === 'YOUR_FORMSPREE_ENDPOINT') {
-        setSubmitStatus('not-configured')
-        setIsSubmitting(false)
-        return
-      }
+      const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/xwvegkwj'
 
       // Send email using Formspree
       const response = await fetch(formspreeEndpoint, {
@@ -298,7 +292,7 @@ const Contact = ({ setActiveSection }) => {
                   </>
                 )}
               </motion.button>
-              {(!import.meta.env.VITE_FORMSPREE_ENDPOINT || import.meta.env.VITE_FORMSPREE_ENDPOINT === 'YOUR_FORMSPREE_ENDPOINT') && (
+              {false && (
                 <div className="p-4 bg-blue-600/20 border border-blue-500 rounded-lg">
                   <div className="space-y-2">
                     <p className="text-blue-400 font-semibold text-center">
