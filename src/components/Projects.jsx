@@ -4,7 +4,7 @@ import { FaGithub, FaExternalLinkAlt, FaCode } from 'react-icons/fa'
 import movieProjectImage from '../img/movie_project.png'
 import brainTumorDetectionImage from '../img/Brain.png'
 import portfolioWebsiteImage from '../img/port.png'
-import weatherDashboardImage from '../img/Weather.png'
+import weatherDashboardImage from '../img/weather.png'
 import androidImage from '../img/android.png'
 
 
